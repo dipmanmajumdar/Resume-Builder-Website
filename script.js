@@ -56,7 +56,7 @@ btn5.onclick = adding_work;
 
 
 function build_cv () {
-    // NameFeilds Setting
+    // Taking values from the form feild
     f_name_data = document.querySelector("#fname").value;
     l_name_data = document.querySelector("#lname").value;
 
@@ -74,7 +74,7 @@ function build_cv () {
     obj_data = document.querySelector("#obj").value;
 
 
-
+    // Identifying the put places
     put_f_name1 = document.querySelector("#f-name1");
     put_f_name2 = document.querySelector("#f-name2");
     put_l_name1 = document.querySelector("#l-name1");
@@ -93,6 +93,8 @@ function build_cv () {
     put_proff = document.querySelector("#p-f-n");
     put_obj = document.querySelector("#o-b-j");
 
+
+    // Setting values
     put_l_name1.innerHTML = l_name_data;
     put_l_name2.innerHTML = l_name_data;
     put_f_name1.innerHTML = f_name_data;
@@ -111,7 +113,7 @@ function build_cv () {
     put_proff.innerHTML = proff_data;
     put_obj.innerHTML = obj_data;
 
-
+    // Dynamic list feilds
     acqs= document.querySelectorAll(".academy")
     for (let each of acqs) {
         // For each values creating a list
@@ -193,14 +195,20 @@ function build_cv () {
         document.querySelector("#hby").appendChild(new_list); 
     }
 
+
+    // Image
     prfph = document.querySelector("#pp").files[0];
-    console.log(prfph);
     put_prfph = document.querySelector("#p-p");
 
+    // Checking if the image is not in jpg format
     if (prfph !== undefined) {
         if (prfph.type === "image/jpeg"){
+            // Reading the file
             reader = new FileReader();
+            // Image URL 
             reader.readAsDataURL(prfph);
+
+            // After loading the file, adding it to the p-p feild
             reader.onloadend= function(){
                 put_prfph.src = reader.result;
             }
@@ -208,8 +216,9 @@ function build_cv () {
     }
 
     
-    
+    // Display screen seeting
     document.querySelector("#form").style.display = "none"
+    document.querySelector("header").style.display = "none"
     document.querySelector("#cv").style.display = "block"
 }
 

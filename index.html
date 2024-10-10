@@ -11,6 +11,11 @@
     />
 
     <style>
+        *{
+            padding: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
         body{
             height: 100%;
             width: 100%;
@@ -25,6 +30,59 @@
         #cv{
             height: 100%;
             width: 100%;
+        }
+
+        #starter{
+            height: 100%;
+            width: 100%;
+        }
+
+        @keyframes fade-up {
+            0% {
+              opacity : 0;
+              transform: translateY(30px);
+            }
+
+            100% {
+              opacity: 1;
+              transform : translateY(0px);
+            }
+        }
+
+        @keyframes fade-down{
+            0% {
+              opacity : 0;
+              transform: translateY(-30px);
+            }
+
+            100% {
+              opacity: 1;
+              transform : translateY(0px);
+            }
+        }
+
+        @keyframes fade-right{
+            0% {
+              opacity : 0;
+              transform: translateX(-30px);
+            }
+
+            100% {
+              opacity: 1;
+              transform : translateX(0px);
+            }
+        }
+
+        @keyframes fade-left{
+            0% {
+              opacity : 0;
+              transform: translateX(30px);
+            }
+
+            100% {
+              opacity: 1;
+              transform : translateX(0px);
+            }
         }
 
         .card{
@@ -43,24 +101,31 @@
         }
 
         .hobby , .skill, .project, .academy, .work{
-          width: 90%; 
-          margin-left: 2px;
-          padding: 5px; 
-          background-color: rgb(33, 34, 28); 
-          color: aliceblue;
+            width: 90%; 
+            margin-left: 2px;
+            padding: 5px; 
+            background-color: rgb(33, 34, 28); 
+            color: aliceblue;
         }
 
     </style>
   </head>
   <body>
-    <div id="form" class="container">
+    <header 
+    style="background-color: darkslategray; color: aliceblue; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-bottom: 10px;">
+      <h3 style="animation : fade-up 0.5s;">Welcome To</h3>
+      <h1 style="animation : fade-up 1s;">...Online Resume Builder...</h1>
+    </header>
+
+
+    <div id="form" class="container" style="display: block;">
         <div class="row">
 
             <!-- left col for perso detl -->
-            <h2 style="text-align:center;">Resume Builder</h2>
+            <h2 style="text-align:center; animation: fade-down 1.5s;">Fill The Form</h2>
             <hr>
 
-            <div class="col-md-6 mt-10 mb-50">
+            <div class="col-md-6 mt-10 mb-50" style="animation: fade-right 1.5s;">
                 <h4 style="text-align: center;">Personal Details</h4>
 
                 <div class="container" style="margin: 5px;">
@@ -175,7 +240,7 @@
 
 
             <!-- right col for prof dtl -->
-            <div class="col-md-6 mt-10 mb-10">
+            <div class="col-md-6 mt-10 mb-10" style="animation: fade-left 1.5s;">
                 <h4 style="text-align: center;">Proffesional Details</h4>
 
                 <div class="container" style="margin: 5px;">
@@ -248,13 +313,15 @@
 
         </div>
         <div class="container text-center" style="margin-top: 50px; margin-bottom: 10px;">
-          <button type="button" id="generate" class="btn btn-success" style="margin-right: 10px;">Build Now</button>
-          <button type="button" id="see" class="btn btn-primary">See The Tremplate</button>
+          <button type="button" id="generate" class="btn btn-success" 
+          style="margin-right: 10px; animation: fade-up 1.5s;">Build Now</button>
+          <button type="button" id="see" class="btn btn-primary"
+          style="animation: fade-up 1.5s;">See The Template</button>
         </div>
         
     </div>
 
-    <div id="cv" class="container" style="display:none;">
+    <div id="cv" class="container" style="display:none; animation: fade-up 1s">
         <div class="row">
             
             <div class="col-md-4" 
@@ -290,7 +357,7 @@
             <div class="col-md-8" 
             style="background-color: rgb(250, 242, 242);"
             >
-                <h2 style="margin-top: 4%; text-align: end; padding-right:10px; font-family: cursive;">
+                <h2 style="margin-top: 4%; text-align: end; padding-right:10px; font-family:cursive;">
                     <span id="f-name2">First</span> 
                     <span id="l-name2" style="color: rgb(227, 131, 21);">Last</span>
                 </h2>
@@ -352,10 +419,16 @@
             </div>
         </div>
         <div class="container text-center" style="margin-top: 50px; margin-bottom: 10px;">
-          <button type="button" id="download" class="btn btn-success">Download CV</button>
+          <button type="button" id="download" class="btn btn-success"
+          style="animation: fade-down 1.5s;">Download CV</button>
         </div>
         
     </div>
+
+    <footer 
+    style="text-align: center; margin-top: 20px;">
+        <p> ©️ Resume Builder 2024 ❤️ </p>
+    </footer>
 
     <script src="script.js"></script>
     
